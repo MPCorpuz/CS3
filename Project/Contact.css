@@ -1,0 +1,77 @@
+ .u-section-1 {
+  background-image: url("images/contact.jpg");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 887px;
+}
+
+.u-section-1 .u-image-1 {
+  height: auto;
+  width: 150px;
+  margin: 52px auto 0 143px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: -93px 113px 0 auto;
+}
+
+.u-section-1 .u-image-2 {
+  height: auto;
+  width: 150px;
+  margin: 93px auto 0 143px;
+}
+
+.u-section-1 .u-social-icons-1 {
+  height: 186px;
+  min-height: 16px;
+  width: 579px;
+  min-width: 68px;
+  margin: -28px 93px 0 auto;
+}
+
+.u-section-1 .u-icon-1 {
+  color: rgb(59, 89, 152) !important;
+  height: 100%;
+}
+
+.u-section-1 .u-icon-2 {
+  color: rgb(85, 172, 238) !important;
+  height: 100%;
+}
+
+.u-section-1 .u-icon-3 {
+  color: rgb(197, 54, 164) !important;
+  height: 100%;
+}
+
+.u-section-1 .u-image-3 {
+  height: 150px;
+  width: 150px;
+  margin: -132px auto 60px 143px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 731px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 264px;
+  }
+}
