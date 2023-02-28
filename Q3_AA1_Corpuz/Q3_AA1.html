@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			h1 {
+				text-align: center;
+				font-size: 70px;
+				background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(255,0,0,1));
+				color: white;
+				margin:0px;
+			}
+			
+			#selectList {
+				margin: 10px 0px 80px 0px;
+			}
+			
+			ul {
+				list-style-type: none;
+				padding: 0px;
+			}
+			
+			ul li {
+				text-align:center;
+				font-size: 30px;
+				padding: 10px;
+				border: 1px solid black;
+				background-color: blue;
+				color: white;
+				float: left;
+			}
+			
+			p {
+				text-align: center;
+				font-size: 30px;
+			}
+			
+			#player {
+				float: left;
+				width: 50%;
+				border: 1px solid black;
+				clear: both;
+			}
+			
+			#computer {
+				float: left;
+				width: 50%;
+				border: 1px solid black;
+			}
+			
+			img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			h1 {
+				text-align: center;
+				font-size: 70px;
+				background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(255,0,0,1));
+				color: white;
+				margin:0px;
+			}
+			
+			#selectList {
+				margin: 10px 0px 80px 0px;
+			}
+			
+			ul {
+				text-align: center;
+				position: relative;
+				right: -38%;
+				list-style-type: none;
+				padding: 0px;
+			}
+			
+			ul li {
+				text-align:center;
+				font-size: 30px;
+				padding: 10px;
+				border: 1px solid black;
+				background-color: blue;
+				color: white;
+				float: left;
+			}
+			
+			p {
+				text-align: center;
+				font-size: 30px;
+			}
+			
+			#player {
+				float: left;
+				width: 50%;
+				border: 1px solid black;
+				clear: both;
+			}
+			
+			#computer {
+				float: left;
+				width: 50%;
+				border: 1px solid black;
+			}
+			
+			img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body onload="pName()" >
+		<h1> RACK, PAYPER, SKISOR </h1>
+		<hr>
+		<!-- This is where the player selects his/her choice for the game. -->
+		<div id="selectList">
+			<ul>
+				<li onclick="rock()">RACK</li>
+				<li onclick="paper()">PAYPER </li>
+				<li onclick="scissor()">SKISOR</li>
+			<ul>
+		</div>
+		
+		<!--Scoreboard and display image of rock, paper and scissor once the game starts -->
+		<div>
+			<!--This is the player's scoreboard and display. -->
+			<div id="player">
+				<p id="playerName"> Player </p>
+				<p id="pScore"> 0 </p>
+				<img id="playerChoice" src="">
+			</div>
+			<!--This is the computer's scoreboard and display. -->
+			<div id="computer"> 
+				<p> jimothy </p>
+				<p id="cScore"> 0 </p>
+				<img id="computerChoice" src="">
+			</div>
+		</div>
+		
+		<script>
+			
+			<!-- Randomizer -->
+			var random = Math.ceil(Math.random()*3);
+			document.write(random);
+		
+			function randomComputer() {
+				var x = Math.ceil(Math.random()*3);
+				return x;
+			}
+			
+			function pName(){
+				var pName = prompt("HOY ILAGAY NIMO IMONG PANGALAN!");
+				document.getElementById("playerName").innerHTML = pName;
+			}
+			function rock(){
+			
+				function checkWinner(){ 
+					document.getElementById("playerChoice").src = "imgs/0.png";
+					var random = randomComputer();
+					if(random==1) {
+						document.getElementById("computerChoice").src ="imgs/0.png";
+					}
+					if(random==2) {
+						document.getElementById("computerChoice").src ="imgs/1.png";
+						cscore = cscore + 1;
+						document.getElementById("cScore").innerHTML = cscore;
+					}
+					if(random==3) {
+						document.getElementById("computerChoice").src ="imgs/2.png";
+						pscore = pscore + 1;
+						document.getElementById("pScore").innerHTML = pscore;
+					}
+				}
+				
+				checkWinner();
+			
+			}
+			function paper(){
+			
+				function checkWinner(){ 
+					document.getElementById("playerChoice").src = "imgs/1.png";
+					var random = randomComputer();
+					if(random==1) {
+						document.getElementById("computerChoice").src ="imgs/0.png";
+						pscore = pscore + 1;
+						document.getElementById("pScore").innerHTML = pscore;					
+					}
+					if(random==2) {
+						document.getElementById("computerChoice").src ="imgs/1.png";
+
+					}
+					if(random==3) {
+						document.getElementById("computerChoice").src ="imgs/2.png";
+						cscore = cscore + 1;
+						document.getElementById("cScore").innerHTML = cscore;
+					}
+				} 
+				
+				checkWinner();
+			
+			}
+			function scissor(){
+			
+				
+				function checkWinner() {
+					document.getElementById("playerChoice").src = "imgs/2.png";
+					var random = randomComputer();
+					if(random==1) {
+						document.getElementById("computerChoice").src ="imgs/0.png";
+						cscore = cscore + 1;
+						document.getElementById("cScore").innerHTML = cscore;					
+					}
+					if(random==2) {
+						document.getElementById("computerChoice").src ="imgs/1.png";
+						pscore = pscore + 1;
+						document.getElementById("pScore").innerHTML = pscore;
+					}
+					if(random==3) {
+						document.getElementById("computerChoice").src ="imgs/2.png";
+
+					}
+			}
+				checkWinner();
+			}
+			var pscore = 0;
+			var cscore = 0;
+			
+			
+			
+		</script>
+	</body>
+</html>
+</html>
