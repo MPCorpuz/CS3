@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Breakdown FA10_Teng</title>
+</head>
+<body>
+    <h1>Randomly Generated Number Breakdown</h1>
+    <p id = "randNum"></p>
+    <p id = "randNum_Break"></p>
+    <script>
+        var randomNum = Math.floor(Math.random() * 1001);
+        var randomNum_String = document.getElementById("randNum");
+        randomNum_String.innerHTML = "Randomly Generated Number: " + randomNum;
+        var onesPlace = randomNum % 10;
+        var tensPlace = Math.floor(randomNum / 10) % 10;
+        var hundredsPlace = Math.floor(randomNum / 100);
+        var randomNum_BreakString = document.getElementById("randNum_Break");
+        randomNum_BreakString.innerHTML = "Breakdown: " + (hundredsPlace * 100) + ", " + (tensPlace * 10) + ", " + onesPlace;
+    </script>
+</body>
+</html>
