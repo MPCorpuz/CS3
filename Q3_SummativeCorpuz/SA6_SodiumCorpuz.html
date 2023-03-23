@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+			<meta charset="UTF-8"> 
+			<meta name="author" content="Corpuz, Mauro"> 
+			<meta name="keywords" content="HTML, CSS, JavaScript"> 
+			<link rel="icon" href="icon.png" type="image/gif"> 
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body onload="randomGen()">
+	<h1> Final Verification Step </h1>
+
+	<h2>
+		Current OTP: <span id="otp"> _ _ _ _ _ _ </span> 
+		<span> <a href="#" onclick="randomGen()"> New OTP </a></span>
+	</h2>
+	
+    <button onclick="enterOTP()"> Enter the OTP as shown above </button>
+    
+    <script>
+	
+	var OTP = "";
+	
+	<!-- Generates the passcode -->
+	function randomGen(){
+		OTP = "";
+		for (i = 0; i <= 5; i++) {
+			var randomNum = Math.floor(Math.random() * 10);
+			var randomNumString = randomNum.toString();
+			OTP = OTP.concat(randomNumString);
+			document.getElementById("otp").innerHTML = OTP;
+		}
+	} 
+	
+	<!-- Entering said passcode -->
+	function enterOTP(){
+		var enteredOTP = prompt("Enter the OTP displayed below: " ).toString();
+		if(enteredOTP == OTP){
+			window.open("https://www.youtube.com/watch?v=ZvSXalDDQsY");
+		<!-- If OTP is wrong -->
+		} else {
+			alert("Incorrect OTP");
+			randomGen();
+		}
+	}
+	
+	
+		
+		
+    </script>
+</body>
+</html>
