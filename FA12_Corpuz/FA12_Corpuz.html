@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>  </title> 
+			<meta charset="UTF-8"> 
+			<meta name="keywords" content="HTML, CSS, JavaScript"> 
+			<link rel="icon" href="icon.png" type="image/gif"> 
+	</head>
+	
+	<style>
+	#htmlCode {
+			text-align: center;
+		}
+		
+	span{
+		display: inline-block;
+		padding: 10px;
+		width: 55px;
+		border: 1px double black;
+	}
+	p {
+		display: inline-block;
+	}
+	#outputDiv {
+		position: absolute;
+		transform: translate(-59%, 40%);
+		margin: 5px auto;
+		padding: 2px;
+		border: 1px solid black;
+		display: none;
+		text-align: center;
+	}
+	</style>
+	<body>
+	
+	<div id="htmlCode">
+		
+	<!-- those text boxes you put a thing in -->
+	
+	<form>
+		<label for="name"> Enter a number between 2 and 10: </label>
+		<br/>
+		<input type="number" id="rowNum" placeholder="# of Rows"> <p> by </p>
+		<input type="number" id="columnNum" placeholder="# of Column">
+	
+	</form>
+	
+	<!-- press -->
+	
+	<br/>
+	<button onclick="func()"> <pre> Submit </pre> </button> 
+
+	<div id="outputDiv">
+		<br/> <br/>
+	</div>
+		
+	</div>
+	<script>
+		function func(){
+		while(true){
+			var range1 = parseInt(document.getElementById("rowNum").value);
+			var range2 = parseInt(document.getElementById("columnNum").value);
+			
+			if(range1 <= 2 || range1 >= 10 || range2 <= 2 || range2 >= 10){
+				alert("Please input the appropriate values (2~10)");
+				return;
+			
+			} else {
+			break;
+			}
+		}
+
+		var rowCtr = 1;
+		var output = "";
+		while(rowCtr <= range1){
+		var columnCtr = 1;
+			while(columnCtr <= range2){
+				output += "<span>" + columnCtr*rowCtr + "</span>"; 
+				columnCtr++;
+			}
+			output += "<br/>";
+			rowCtr++;
+		}
+		document.getElementById("outputDiv").innerHTML = output;
+		document.getElementById("outputDiv").style.display = "inline-block";
+		}
+	
+	</script>
+	</body>
+</html>
