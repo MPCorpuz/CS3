@@ -8,7 +8,7 @@
 	</head>
 	
 	<style>
-	#htmlCode {
+	#theotherpart {
 			text-align: left;
 		}
 		
@@ -22,7 +22,7 @@
 	p {
 		display: inline-block;
 	}
-	#outputDiv {
+	#output {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,7 +39,7 @@
 	<h1>MULTIPLAAAA</h1>
 	<body>
 	
-	<div id="htmlCode">
+	<div id="theotherpart">
 		
 	<!-- those text boxes you put a thing in -->
 	
@@ -56,7 +56,7 @@
 	<br/>
 	<button onclick="func()"> <pre> push da button </pre> </button> 
 
-	<div id="outputDiv">
+	<div id="output">
 		<br/> <br/>
 	</div>
 		
@@ -64,10 +64,10 @@
 	<script>
 		function func(){
 		while(true){
-			var range1 = parseInt(document.getElementById("rowNum").value);
-			var range2 = parseInt(document.getElementById("columnNum").value);
-			
-			if(range1 <= 2 || range1 >= 10 || range2 <= 2 || range2 >= 10){
+			var rangeA = parseInt(document.getElementById("rowNum").value);
+			var rangeB = parseInt(document.getElementById("columnNum").value);
+			<!-- error sensor -->
+			if(rangeA <= 2 || rangeA >= 10 || rangeB <= 2 || rangeB >= 10){
 				alert("You dunce, input the appropriate values 2-10");
 				return;
 			
