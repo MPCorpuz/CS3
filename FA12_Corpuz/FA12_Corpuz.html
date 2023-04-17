@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>  </title> 
+			<meta charset="UTF-8"> 
+			<meta name="keywords" content="HTML, CSS, JavaScript"> 
+		
+	</head>
+	
+	<style>
+	#theotherpart {
+			text-align: left;
+		}
+		
+	span{
+		display: inline-block;
+		padding: 10px;
+		width: 40px;
+		border: 1px double black;
+		text-align:center;
+	}
+	p {
+		display: inline-block;
+	}
+	#outputDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 5px auto;
+  padding: 2px;
+  border: 1px solid black;
+  display: none;
+  text-align: center;
+  max-width: 1800px;
+  max-height: 800px;
+}
+	</style>
+	<h1>MULTIPLAAAA</h1>
+	<body>
+	
+	<div id="theotherpart">
+		
+	<!-- those text boxes you put a thing in -->
+	
+	<form>
+		<label for="name"> enter numbo between 2 and 10: </label>
+		<br/>
+		<input type="number" id="rowNum" placeholder="# of Rows"> <p> by </p>
+		<input type="number" id="columnNum" placeholder="# of Column">
+	
+	</form>
+	
+	<!-- press -->
+	
+	<br/>
+	<button onclick="func()"> <pre> push da button </pre> </button> 
+
+	<div id="outputDiv">
+		<br/> <br/>
+	</div>
+		
+	</div>
+	<script>
+		function func(){
+		while(true){
+			var rangeA = parseInt(document.getElementById("rowNum").value);
+			var rangeB = parseInt(document.getElementById("columnNum").value);
+			<!-- error sensor -->
+			if(rangeA <= 1 || rangeA >= 11 || rangeB <= 1 || rangeB >= 11){
+				alert("You dunce, input the appropriate values 2-10");
+				return;
+			
+			} else {
+			break;
+			}
+		}
+
+		var rowCtr = 1;
+		var output = "";
+		while(rowCtr <= rangeA){
+		var columnCtr = 1;
+			while(columnCtr <= rangeB){
+				output += "<span>" + columnCtr*rowCtr + "</span>"; 
+				columnCtr++;
+			}
+			output += "<br/>";
+			rowCtr++;
+		}
+		document.getElementById("outputDiv").innerHTML = output;
+		document.getElementById("outputDiv").style.display = "inline-block";
+		}
+	
+	</script>
+	</body>
+</html>
